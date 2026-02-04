@@ -6,11 +6,10 @@ Proyecto hecho en PHP para la gestion de alumnos de una universidad
 
 ## Tecnologias utilizadas
 
-- Node.js``
-- HTML
-- CSS
-- JavaScript
+- PHP
+- MySQl
 - **Git / GitHub**
+- SQL Lite
 
 ---
 
@@ -18,53 +17,45 @@ Proyecto hecho en PHP para la gestion de alumnos de una universidad
 
 Aplicacion web con:
 
-- **Frontend estatico** (HTML/CSS/JS) servido como archivos estaticos.
-- **Backend** (Node.js + Express) con endpoints REST bajo `/api/*`.
-- **Base de datos** SQLite (generada localmente).
+- Registrar Alumno
+- Registrar Grupo
+- Alumnos Registrados
 
 ---
 
 ## Estructura del proyecto (actual)
 
 ```
-.
-|-- index.html
-|-- pages/
-|   |-- about.html
-|   |-- contact.html
-|   |-- mv.html
-|   |-- panel.html
-|   |-- projects.html
-|   `-- services.html
-|-- assets/
-|   |-- css/
-|   |   `-- styles.css
-|   |-- js/
-|   |   |-- main.js
-|   |   |-- panel.js
-|   |   `-- projects.js
-|   `-- img/
-|       |-- logo.svg
-|       |-- avatar-ana.svg
-|       `-- avatar-victor.svg
-|-- server/
-|   |-- index.js
-|   |-- db.js
-|   |-- auth.js
-|   |-- seed.js
-|   `-- routes/
-|       |-- auth.js
-|       |-- messages.js
-|       |-- projects.js
-|       |-- settings.js
-|       `-- users.js
-|-- package.json
-`-- package-lock.json
+├── .gitignore
+├── README.md
+├── public
+│   └── index.php
+└── src
+    ├── bootstrap.php
+    ├── Db.php
+    ├── Controllers
+    │   ├── GroupsController.php
+    │   ├── HomeController.php
+    │   └── StudentsController.php
+    ├── Http
+    │   └── Response.php
+    ├── Routing
+    │   └── Router.php
+    ├── Support
+    │   ├── Flash.php
+    │   └── View.php
+    └── Views
+        ├── home.php
+        ├── layout.php
+        ├── student_edit.php
+        └── student_view.php
 ```
 
 Notas:
-- `node_modules/` se genera con `npm install` y no se versiona.
-- La base de datos SQLite vive en `server/data/` (ignorada por `.gitignore`).
+Mini-sistema en PHP (sin dependencias) para:
+- Registrar grupos (carrera, turno, grado) con código autogenerado.
+- Registrar alumnos y asignarlos a un grupo.
+- Listar alumnos registrados con acciones: ver, editar y eliminar.
 
 ---
 
@@ -74,39 +65,38 @@ Ramas:
 
 - `main` -> version estable
 - `irving/*` -> dev
-- `joshua/*` -> dev
+- `aaron/*` -> dev
 
 ---
 
-## Requisitos previos
+## Requisitos
+- PHP 8.1+ (recomendado 8.2+)
 
-- Node.js (LTS recomendado) y npm
-- Git (para clonar)
+## Ejecutar
+Desde la raíz del proyecto:
 
----
+powershell
+php -S localhost:8000 -t public
 
-## Como correr el proyecto localmente
 
-1) Instalar dependencias:
+Luego abre http://localhost:8000.
 
-`npm install`
-
-2) Levantar el servidor:
-
-`npm start`
-
-3) Abrir en el navegador:
-- `http://localhost:3000`
-- Healthcheck: `http://localhost:3000/api/health`
+## Base de datos
+Usa SQLite en storage/app.sqlite. Se crea automáticamente al primer inicio.
 
 ---
 
 ## Funcionalidades
 
-- Sitio publico (home + paginas informativas en `/pages`)
-- Panel (`/pages/panel.html`) con consumo de API
-- API REST (`/api/*`) con autenticacion y persistencia en SQLite
-- Formulario de contacto (`POST /api/contact`)
+- Crear grupo
+- Crear Alumno
+- Crear Turno
+- Crear Grado
+- Actualizar
+- Registrar Alumno
+- Registrar Grupo
+- Editar
+- Eliminar
 
 ---
 
@@ -115,5 +105,5 @@ Ramas:
 **IRVING ISAY PINEDA PINEDA**
 - https://github.com/IRVINGPINEDA
 
-**JOSHUA MEDINA**
+**Aaron Rojas Monroy**
 - https://github.com/goku58432
