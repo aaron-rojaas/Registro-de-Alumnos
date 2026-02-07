@@ -21,7 +21,7 @@ Luego abre `http://localhost:8000`.
 Usa SQLite en `storage/app.sqlite`. Se crea automáticamente al primer inicio.
 
 ## Estructura del proyecto
-=======
+
 # Registro de Alumnos
 
 Proyecto hecho en PHP y MySQL para la gestion de alumnos de una universidad
@@ -49,7 +49,7 @@ Aplicacion web con:
 ---
 
 ## Estructura del proyecto (actual)
->>>>>>> c33326f53782c03ff2848542668f08f636221fd5
+
 
 ```
 .
@@ -78,9 +78,7 @@ Aplicacion web con:
         └── student_view.php
 ```
 
-<<<<<<< HEAD
 > Nota: `storage/` se genera en runtime (SQLite + archivos temporales).
-=======
 ---
 
 ## Trabajo en equipo y ramas
@@ -120,6 +118,9 @@ Usa SQLite en storage/app.sqlite. Se crea automáticamente al primer inicio.
 - Agregar Nombre
 - Agregar Apellido Paterno
 - Agregar Apellido Materno
+- Configuracion de Catalogos
+- Habilitacion de Carreras
+- Inhabilitacion de Carreras
 
 ---
 
@@ -130,4 +131,4 @@ Usa SQLite en storage/app.sqlite. Se crea automáticamente al primer inicio.
 
 **AARON ROJAS**
 - https://github.com/aaronrojas
->>>>>>> c33326f53782c03ff2848542668f08f636221fd5
+
